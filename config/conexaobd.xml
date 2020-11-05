@@ -1,0 +1,5 @@
+<conexaobd>
+  <host>jdbc:sqlserver://sismar.ddns.net:1433;databaseName=SISMAR</host>
+  <usuario>sa</usuario>
+  <senha>smA12345</senha>
+</conexaobd>

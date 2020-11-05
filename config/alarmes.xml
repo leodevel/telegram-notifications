@@ -1,0 +1,86 @@
+<list>
+  <alarme id="1">
+    <nome>Estação Vaisala</nome>
+    <tabela>vaisala</tabela>
+    <colunaOrdenar>dataHora</colunaOrdenar>
+    <ordem>DESC</ordem>
+    <coluna>dataHora</coluna>
+    <tipoVariavel>DATA_HORA</tipoVariavel>
+    <tipo>MENOR</tipo>
+    <valor>now-5</valor>
+    <mensagem>Estação vaisala esta fora do ar. A última marcação foi a mais de 5 minutos.</mensagem>
+    <mensagemSairDaRegra>Estação vaisala voltou ao normal. A última leitura foi a menos de 5 minutos</mensagemSairDaRegra>
+    <tipoConsulta>MANUAL</tipoConsulta>
+    <sql></sql>
+    <iniciarAutomatico>true</iniciarAutomatico>
+    <grupos>
+      <int>2</int>
+      <int>3</int>
+    </grupos>
+    <tipoNotificacao>SAIU_DA_REGRA</tipoNotificacao>
+    <intervalo>60</intervalo>
+  </alarme>
+  <alarme id="2">
+    <nome>Estação Dolphin14</nome>
+    <tabela>dolphin14</tabela>
+    <colunaOrdenar>dataHora</colunaOrdenar>
+    <ordem>DESC</ordem>
+    <coluna>dataHora</coluna>
+    <tipoVariavel>DATA_HORA</tipoVariavel>
+    <tipo>MENOR</tipo>
+    <valor>now-5</valor>
+    <mensagem>A Estação do Dolphin14 esta fora do ar. A última marcação foi a mais de 5 minutos.</mensagem>
+    <mensagemSairDaRegra>A Estação do Dolphin14 voltou ao normal. A última marcação foi a menos de 5 minutos.</mensagemSairDaRegra>
+    <tipoConsulta>MANUAL</tipoConsulta>
+    <sql></sql>
+    <iniciarAutomatico>true</iniciarAutomatico>
+    <grupos>
+      <int>2</int>
+      <int>3</int>
+    </grupos>
+    <tipoNotificacao>SAIU_DA_REGRA</tipoNotificacao>
+    <intervalo>60</intervalo>
+  </alarme>
+  <alarme id="3">
+    <nome>Estação LofftVentusX (Alemoa)</nome>
+    <tabela>anemometro3</tabela>
+    <colunaOrdenar>dataHora</colunaOrdenar>
+    <ordem>DESC</ordem>
+    <coluna>dataHora</coluna>
+    <tipoVariavel>DATA_HORA</tipoVariavel>
+    <tipo>MENOR</tipo>
+    <valor>now-5</valor>
+    <mensagem>A Estação de Alemoa esta fora do ar. A última marcação foi a mais de 5 minutos.</mensagem>
+    <mensagemSairDaRegra>A Estação de Alemoa voltou ao normal. A última marcação foi a menos de 5 minutos.</mensagemSairDaRegra>
+    <tipoConsulta>MANUAL</tipoConsulta>
+    <sql></sql>
+    <iniciarAutomatico>true</iniciarAutomatico>
+    <grupos>
+      <int>2</int>
+      <int>3</int>
+    </grupos>
+    <tipoNotificacao>SAIU_DA_REGRA</tipoNotificacao>
+    <intervalo>60</intervalo>
+  </alarme>
+  <alarme id="4">
+    <nome>Correntômetro</nome>
+    <tabela>correntometro</tabela>
+    <colunaOrdenar>dataHora</colunaOrdenar>
+    <ordem>DESC</ordem>
+    <coluna>dataHora</coluna>
+    <tipoVariavel>DATA_HORA</tipoVariavel>
+    <tipo>MENOR</tipo>
+    <valor>now-10</valor>
+    <mensagem>Correntômetro Tebar sem comunicação.... a última marcação foi a mais de 10 minutos</mensagem>
+    <mensagemSairDaRegra>Correntômetro voltou a comunicação....</mensagemSairDaRegra>
+    <tipoConsulta>MANUAL</tipoConsulta>
+    <sql></sql>
+    <iniciarAutomatico>true</iniciarAutomatico>
+    <grupos>
+      <int>2</int>
+      <int>3</int>
+    </grupos>
+    <tipoNotificacao>SAIU_DA_REGRA</tipoNotificacao>
+    <intervalo>60</intervalo>
+  </alarme>
+</list>
