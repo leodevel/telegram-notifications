@@ -4,6 +4,7 @@ import br.com.marino.monitorar.enums.TipoNotificacao;
 import br.com.marino.monitorar.models.Alarme;
 import br.com.marino.monitorar.models.Grupo;
 import br.com.marino.monitorar.models.SendTelegram;
+import br.com.marino.monitorar.models.TipoNotificacaoAlarme;
 import br.com.marino.monitorar.services.AlarmeService;
 import br.com.marino.monitorar.services.TelegramService;
 import br.com.marino.monitorar.utils.Logs;
@@ -67,27 +68,16 @@ public class TelegramModule extends Thread {
 
             SendTelegram obj = list.get(0);
             Alarme alarme = AlarmeService.getInstance().getById(obj.getAlarme().getId());
+            TipoNotificacaoAlarme tipoNotificacaoAlarme = TipoNotificacaoAlarme.getTipoNotificacaoAlarme(alarme.getId());
 
-            // verifica se deve ou não notificar
-            /*if (alarme.getValorNotificado() == null
+            if (tipoNotificacaoAlarme.getTipoNotificacao() == null
                     && obj.getTipoNotificacao() == TipoNotificacao.SAIU_DA_REGRA) {
                 list.remove(0);
                 continue;
             }
 
-            if (alarme.getValorNotificado() != null
-                    && alarme.getTipoNotificacao() == obj.getTipoNotificacao()) {
-                list.remove(0);
-                continue;
-            }*/
-            if (alarme.getTipoNotificacao() == null
-                    && obj.getTipoNotificacao() == TipoNotificacao.SAIU_DA_REGRA) {
-                list.remove(0);
-                continue;
-            }
-
-            if (alarme.getTipoNotificacao() != null
-                    && alarme.getTipoNotificacao() == obj.getTipoNotificacao()) {
+            if (tipoNotificacaoAlarme.getTipoNotificacao() != null
+                    && tipoNotificacaoAlarme.getTipoNotificacao() == obj.getTipoNotificacao()) {
                 list.remove(0);
                 continue;
             }
@@ -134,9 +124,8 @@ public class TelegramModule extends Thread {
 
                 if (notificado) {
 
-                    alarme.setTipoNotificacao(obj.getTipoNotificacao());
-                    //alarme.setValorNotificado(obj.getValorNotificado());
-                    AlarmeService.getInstance().update(obj.getAlarme(), alarme);
+                    tipoNotificacaoAlarme.setTipoNotificacao(obj.getTipoNotificacao());
+                    TipoNotificacaoAlarme.update(tipoNotificacaoAlarme, obj.getAlarme().getId());
 
                     list.remove(0);
 

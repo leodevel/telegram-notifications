@@ -191,6 +191,7 @@ public class JDGrupo extends javax.swing.JDialog {
         try {
             TelegramService.sendTestMessage(getObj());
         } catch (Exception ex) {
+            ex.printStackTrace();
             JOptionPane.showMessageDialog(null, "Falha ao fazer o teste de envio",
                     "Atenção", JOptionPane.WARNING_MESSAGE);
         }

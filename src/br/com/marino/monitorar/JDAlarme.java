@@ -570,8 +570,6 @@ public class JDAlarme extends javax.swing.JDialog {
             } else {
 
                 u.setId(alarm.getId());
-                u.setTipoNotificacao(alarm.getTipoNotificacao());
-                //u.setValorNotificado(alarm.getValorNotificado());
                 AlarmeService.getInstance().update(alarm, u);
 
                 this.alarm = u;

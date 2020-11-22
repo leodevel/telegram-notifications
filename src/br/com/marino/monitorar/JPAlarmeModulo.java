@@ -1,6 +1,7 @@
 package br.com.marino.monitorar;
 
 import br.com.marino.monitorar.models.Alarme;
+import br.com.marino.monitorar.models.TipoNotificacaoAlarme;
 import br.com.marino.monitorar.modules.AlarmeModule;
 import br.com.marino.monitorar.services.AlarmeService;
 import br.com.marino.monitorar.services.ConexaoBDService;
@@ -151,6 +152,11 @@ public class JPAlarmeModulo extends javax.swing.JPanel implements ReadListener {
             File log = Paths.get("logs/alarme_" + alarme.getId() + ".log").toFile();
             if (log.exists()) {
                 log.delete();
+            }
+            
+            File tipoNotificacaoAlarme = Paths.get(TipoNotificacaoAlarme.getFile(alarme.getId())).toFile();
+            if (tipoNotificacaoAlarme.exists()) {
+                tipoNotificacaoAlarme.delete();
             }
 
             pai.removerAlarme(alarme);

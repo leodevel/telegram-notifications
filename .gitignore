@@ -157,3 +157,4 @@ buildNumber.properties
 # Netbeans
 nbactions.xml
 HELP.md
+/dist/

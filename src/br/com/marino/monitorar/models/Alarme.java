@@ -35,7 +35,7 @@ public class Alarme implements Entity {
     
     private List<Integer> grupos;    
     
-    private TipoNotificacao tipoNotificacao;
+    //private TipoNotificacao tipoNotificacao;
     
     private Integer intervalo;
 
@@ -127,13 +127,13 @@ public class Alarme implements Entity {
         this.iniciarAutomatico = iniciarAutomatico;
     }   
 
-    public TipoNotificacao getTipoNotificacao() {
+    /*public TipoNotificacao getTipoNotificacao() {
         return tipoNotificacao;
     }
 
     public void setTipoNotificacao(TipoNotificacao tipoNotificacao) {
         this.tipoNotificacao = tipoNotificacao;
-    }
+    }*/
 
     public String getMensagemSairDaRegra() {
         return mensagemSairDaRegra;
